@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import GreetingCard from '../components/GreetingCard'
 import GreetingWishes from '../components/GreetingWishes'
 import FloatingSideDecor from '../components/FloatingSideDecor'
+import { recordVisitor } from '../api/visitorAPI'
 
 export default function Greeting({ name, setName }) {
   const navigate = useNavigate()
@@ -24,6 +25,13 @@ export default function Greeting({ name, setName }) {
   const urlName = parseNameFromPath()
   // Use URL name first, then fall back to state
   const displayName = urlName || name
+
+  // Record visitor when URL name is detected (fire-and-forget)
+  useEffect(() => {
+    if (urlName) {
+      recordVisitor(urlName)
+    }
+  }, [urlName])
 
   // If not on a greeting path, redirect to home
   useEffect(() => {

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import EidQuotes from '../components/EidQuotes'
 import NameForm from '../components/NameForm'
 import FloatingSideDecor from '../components/FloatingSideDecor'
+import { recordVisitor } from '../api/visitorAPI'
 
 export default function Home({ name, setName }) {
   const navigate = useNavigate()
@@ -11,6 +12,11 @@ export default function Home({ name, setName }) {
   const handleGenerate = (enteredName) => {
     setName(enteredName)
     const encoded = encodeURIComponent(enteredName)
+    
+    // Fire-and-forget API call - don't wait for response
+    recordVisitor(enteredName)
+    
+    // Navigate immediately
     navigate(`/name=${encoded}`)
   }
 

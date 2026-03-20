@@ -32,7 +32,7 @@ export default function NameForm({ initialName = '', onGenerate, disabled }) {
         <input
           id="username"
           type="text"
-          placeholder="e.g. Aisha, Mamoon, Omar..."
+          placeholder="Enter Your Name..."
           disabled={disabled}
           value={name}
           onChange={(e) => setName(e.target.value)}

@@ -1,0 +1,77 @@
+@import "tailwindcss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top left, #2b6c2c 0%, #0f172a 45%, #020617 100%);
+  color: #f8fafc;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.09) 0px, transparent 40px),
+    radial-gradient(circle at 80% 40%, rgba(220, 231, 117, 0.08) 0px, transparent 36px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-20%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes scroll-up {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-20%); }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 16s linear infinite;
+}
+
+.animate-scroll-up {
+  animation: scroll-up 18s linear infinite;
+}
+
+.star-animation {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .1; transform: scale(0.95); }
+  50% { opacity: .35; transform: scale(1.1); }
+}
+
+.star-dot {
+  position: absolute;
+  background: rgba(255,255,255,0.85);
+  border-radius: 9999px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+
+.moon-emoji {
+  position: absolute;
+  font-size: 1.8rem;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}

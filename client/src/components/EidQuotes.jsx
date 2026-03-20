@@ -3,23 +3,33 @@ import eid1 from '../assets/images/Eid Al Fitr Eid GIF (1).gif'
 import eid2 from '../assets/images/Eid Al Fitr Eid GIF.gif'
 import eid3 from '../assets/images/Eid Al Fitr Ramadan GIF by Islamic Relief Switzerland.gif'
 import eid4 from '../assets/images/Eid Al Fitr Ramadan GIF by SAP.gif'
+import eid5 from '../assets/images/Eid Al Fitr Ramadan GIF by Sonamm.gif'
+import eid6 from '../assets/images/Images Wallpaper GIF.gif'
 
 const quotes = [
   {
-    text: 'May this Eid bring peace and happiness to your life',
+    text: 'May this Eid fill your heart with joy and your home with laughter',
     image: eid1,
   },
   {
-    text: 'Eid Mubarak! May Allah bless you and your family',
+    text: 'Eid Mubarak! Wishing blessings, love, and peace to you and your family',
     image: eid2,
   },
   {
-    text: 'Wishing you joy, success, and endless blessings',
+    text: 'Celebrate this Eid with happiness, hope, and endless smiles',
     image: eid3,
   },
   {
-    text: 'May your home be filled with love, joy, and warmth this Eid',
+    text: 'May your days be bright and your nights peaceful this Eid',
     image: eid4,
+  },
+  {
+    text: 'Eid is a time to share love, kindness, and beautiful memories',
+    image: eid5,
+  },
+  {
+    text: 'Sending heartfelt wishes for a joyous and prosperous Eid',
+    image: eid6,
   },
 ]
 

@@ -34,7 +34,7 @@ export default function GreetingWishes() {
       >
         More Blessings for You
       </motion.h2>
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5">
         {wishes.map((wish, idx) => (
           <motion.div
             key={idx}
@@ -42,10 +42,12 @@ export default function GreetingWishes() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.25 + idx * 0.08 }}
             whileHover={{ y: -4, scale: 1.02 }}
-            className="bg-white/8 border border-emerald-100/20 rounded-2xl p-5 backdrop-blur-sm shadow-lg shadow-emerald-950/20"
+            className="bg-white/8 border border-emerald-100/20 rounded-2xl p-4 sm:p-5 backdrop-blur-sm shadow-lg shadow-emerald-950/20"
           >
-            <div className="text-3xl mb-3">{wish.icon}</div>
-            <p className="text-sm sm:text-base text-slate-100 leading-relaxed">{wish.text}</p>
+            <div style={{margin: "1rem"}}>
+              <div className="text-3xl mb-3">{wish.icon}</div>
+            <p className="text-sm sm:text-base text-slate-100 leading-relaxed m-5">{wish.text}</p>
+            </div>
           </motion.div>
         ))}
       </div>

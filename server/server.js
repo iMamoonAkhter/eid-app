@@ -32,6 +32,9 @@ app.get('/health', (req, res) => {
   res.status(200).json({ success: true, message: 'Server is running' })
 })
 
+app.get('/', (req, res) => {
+  res.status(200).json({ success: true, message: 'Hello' })
+})
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Route not found' })
